@@ -1,0 +1,14 @@
+{
+    "Lua.diagnostics.globals": [
+        "term",
+        "colors",
+        "http",
+        "fs",
+        "sleep",
+        "textutils",
+        "printStats",
+        "getAllBees",
+        "peripheral",
+        "rs"
+    ]
+}
