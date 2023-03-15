@@ -546,8 +546,11 @@ function App:initBreeder()
 end
 function App:initMutationGraph()
   self.beeGraph = {}
-  local beeGraph = self.breeder.peripheral.getBeeBreedingData()
-  for _, mutation in ipairs(beeGraph) do
+  local path = config.registry.breederProvider
+  local filename = string.sub(path, 9) -- remove openbee/
+  os.loadAPI(path)
+  --local beeGraph = self.breeder.peripheral.getBeeBreedingData()
+  for _, mutation in ipairs(_G[filename]['getBeeBreedingData']()()) do
     if self.beeGraph[mutation.result] == nil then self.beeGraph[mutation.result] = {} end
     table.insert(self.beeGraph[mutation.result], mutation)
     -- Somehow doesn't report Unusual as species via breeder.listAllSpecies()
