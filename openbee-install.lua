@@ -3,8 +3,8 @@
 --- Hosted at http://pastebin.com/XxjND24H
 
 local branch = 'master'
-local url = 'https://raw.github.com/secondfry/openbee/' .. branch .. '/'
-local filenames = {'openbee-install.lua', 'openbee.lua', 'matron.lua', 'openbee/BreederApiary.lua', 'openbee/StorageAE.lua', 'README.md'}
+local url = 'https://raw.github.com/Feramance/openbee/' .. branch .. '/'
+local filenames = {'openbee-install.lua', 'openbee.lua', 'matron.lua', 'openbee/BreederApiary.lua', 'openbee/StorageAE.lua', 'openbee/BeeBreedingData.lua', 'README.md'}
 local folders = {'openbee'}
 
 term.setTextColor(colors.green)
