@@ -136,7 +136,7 @@ function Forte40.buildMutationGraph(apiary)
 end
 function Forte40.buildTargetSpeciesList(catalog, apiary)
   local targetSpeciesList = {}
-  local parentss = apiary.peripheral.getBeeBreedingData()
+  local parentss = getBeeBreedingData()
   for _, parents in pairs(parentss) do
     local skip = false
     for i, ignoreSpecies in ipairs(config.registry.ignoreSpecies) do
@@ -547,7 +547,7 @@ function App:initBreeder()
 end
 function App:initMutationGraph()
   self.beeGraph = {}
-  local beeGraph = self.breeder.peripheral.getBeeBreedingData()
+  local beeGraph = getBeeBreedingData()
   for _, mutation in ipairs(beeGraph) do
     if self.beeGraph[mutation.result] == nil then self.beeGraph[mutation.result] = {} end
     table.insert(self.beeGraph[mutation.result], mutation)
