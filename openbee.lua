@@ -5,6 +5,7 @@
 local configDefault = {
   ['storageProvider'] = 'openbee/StorageAE.lua', -- allows different storage backends
   ['breederProvider'] = 'openbee/BreederApiary.lua', -- allows different breeder backends
+  ['beeBreedingData'] = 'openbee/BeeBreedingData.lua', -- allows different breeder backends
   ["analyzerDir"] = "west", -- direction from storage to analyzer
   ["storageDir"] = "south", -- direction from breeder to storage
   ["productDir"] = "down", -- direction from breeder to product storage
@@ -546,11 +547,11 @@ function App:initBreeder()
 end
 function App:initMutationGraph()
   self.beeGraph = {}
-  local path = config.registry.breederProvider
+  local path = config.registry.beeBreedingData
   local filename = string.sub(path, 9) -- remove openbee/
   os.loadAPI(path)
   --local beeGraph = self.breeder.peripheral.getBeeBreedingData()
-  for _, mutation in ipairs(_G[filename]['getBeeBreedingData']()()) do
+  for _, mutation in ipairs(_G[filename]['BeeBreedingData']()()) do
     if self.beeGraph[mutation.result] == nil then self.beeGraph[mutation.result] = {} end
     table.insert(self.beeGraph[mutation.result], mutation)
     -- Somehow doesn't report Unusual as species via breeder.listAllSpecies()

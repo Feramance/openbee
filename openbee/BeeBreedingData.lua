@@ -1,4 +1,4 @@
-function getBeeBreedingData()
+function BeeBreedingData()
     breedingTable = {}
     breedingTable[1] = {
       ['allele1'] = "Forest",
