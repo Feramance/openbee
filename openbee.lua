@@ -7,7 +7,7 @@ local configDefault = {
   ['breederProvider'] = 'openbee/BreederApiary.lua', -- allows different breeder backends
   ["analyzerDir"] = "west", -- direction from storage to analyzer
   ["storageDir"] = "south", -- direction from breeder to storage
-  ["productDir"] = "down", -- direction from breeder to product storage
+  ["productDir"] = "south", -- direction from breeder to product storage
   ["breederDir"] = "north", -- direction from storage to breeder
 
   -- StorageAE block
