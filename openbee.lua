@@ -1929,7 +1929,7 @@ function getBeeBreedingData()
   breedingTable[139] = {
      ['allele1'] = "Excited",
      ['specialConditions'] = {},
-     ['allele2'] = "Valiant",
+     ['allele2'] = "Diligent",
      ['result'] = "Energetic",
      ['chance'] = 8
     }
