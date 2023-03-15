@@ -124,7 +124,7 @@ function Forte40.buildMutationGraph(apiary)
       }
     end
   end
-  for _, parents in pairs(apiary.getBeeBreedingData()) do
+  for _, parents in pairs(getBeeBreedingData()) do
     Forte40.fixParents(parents)
     Forte40.addMutateTo(parents.allele1, parents.allele2, parents.result, parents.chance)
     Forte40.addMutateTo(parents.allele2, parents.allele1, parents.result, parents.chance)
@@ -547,8 +547,8 @@ function App:initBreeder()
 end
 function App:initMutationGraph()
   self.beeGraph = {}
-  --local beeGraph = self.breeder.peripheral.getBeeBreedingData()
-  for _, mutation in ipairs(getBeeBreedingData()) do
+  local beeGraph = self.breeder.peripheral.getBeeBreedingData()
+  for _, mutation in ipairs(beeGraph) do
     if self.beeGraph[mutation.result] == nil then self.beeGraph[mutation.result] = {} end
     table.insert(self.beeGraph[mutation.result], mutation)
     -- Somehow doesn't report Unusual as species via breeder.listAllSpecies()
